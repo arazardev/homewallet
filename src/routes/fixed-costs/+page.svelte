@@ -4,8 +4,11 @@
 	import Btn from "$lib/ui/Btn.svelte";
 	import BtnModal from "$lib/ui/BtnModal.svelte";
     import {fixedCosts} from "$lib/stores/fixed-costs"
+    import {months} from "$lib/stores/month"
 	import FixCostCard from "./FixCostCard.svelte";
 	import Board from "../../lib/ui/Board.svelte";
+	import FormNewMonth from "./FormNewMonth.svelte";
+	import MonthCard from "./MonthCard.svelte";
 
     let name
     let price
@@ -65,5 +68,14 @@
 </section>
 
 <Board color="red">
-    <h1 class="text-xl text-center mt-10 mb-10 text-red-300">Siguiente pago: ${nextPay}</h1>
+    <h1 class="text-xl text-center mt-5 text-red-300">Total </h1>
+    <h2 class="text-center text-3xl mt-5 text-red-300 mb-5">${nextPay}</h2>
 </Board>
+
+<BtnModal color="green" title="Iniciar Mes" twClass="mt-10 w-fit place-self-center">
+    <FormNewMonth slot="body"></FormNewMonth>
+</BtnModal>
+
+{#each $months as month (month.month)}
+    <MonthCard {month}></MonthCard>
+{/each}

@@ -4,6 +4,7 @@
 	import SidebarLink from "./SidebarLink.svelte";
 	import GraphIcon from "$lib/ui/icons/GraphIcon.svelte";
 	import TestIcon from "../lib/ui/icons/TestIcon.svelte";
+	import CashIcon from "../lib/ui/icons/CashIcon.svelte";
     const sidebarHideClass = ""
     const sidebarShowClass = "-translate-x-full xlg:translate-x-0"
     let sidebarShow = false
@@ -66,6 +67,9 @@
          <SidebarLink title="Gastos Variables" to="/var-costs">
             <GraphIcon slot="icon"></GraphIcon>
          </SidebarLink>
+         <SidebarLink title="Ingresos" to="/revenue-sources">
+            <CashIcon slot="icon"></CashIcon>
+         </SidebarLink>
          <SidebarLink title="Test" to="/test-page">
             <TestIcon slot="icon"></TestIcon>
          </SidebarLink>
@@ -99,9 +103,9 @@
 
     div.footer {
         position: static;
-        margin-top: 0px;
+        margin-top: 100px;
         bottom: 0;
-        background-color: rgb(3 7 18);
+        background-color: rgb(10, 19, 41);
         width: 100vw;
         max-width:100%;
         height: 50px;
